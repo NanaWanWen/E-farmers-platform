@@ -1,0 +1,48 @@
+package com.cow.dao;
+
+import com.cow.entity.UserRole;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ *
+
+ * @description userRole
+ */
+@Repository
+public interface UserRoleDao extends BaseDao<UserRole> {
+    /**
+     * 根据用户编号查询用户角色信息
+     *
+     * @param userId 用户编号
+     * @return 用户角色信息
+     */
+    List<UserRole> selectByUserId(Integer userId);
+
+    /**
+     * 根据用户编号删除用户角色信息
+     *
+     * @param userId 用户编号
+     * @return 是否删除成功
+     */
+    @Override
+    Boolean deleteById(Integer userId);
+
+    /**
+     * 根据用户编号查询角色信息
+     *
+     * @param userId 用户编号
+     * @return 角色信息
+     */
+    List<Map<String, Object>> selectRoleByUserId(Integer userId);
+
+    /**
+     * 查询角色是否存在
+     *
+     * @param roleId 角色编号
+     * @return 角色是否存在
+     */
+    Boolean existsRole(Integer roleId);
+}

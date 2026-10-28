@@ -1,0 +1,1 @@
+export const reqAlipay = (data)=>Request({url:'/alipay/pay',method:'post',data:data});

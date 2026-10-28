@@ -1,0 +1,34 @@
+spring:
+  mail:
+    host: smtp.163.com # Sending mail server
+    username: your_email_username # Email address for sending emails
+    password: your_email_password # Client authorization code
+#    properties.mail.smtp.port: 994 # 465 or 994
+    nickname: your_nickname
+#    properties.mail.smtp.starttls.enable: true
+#    properties.mail.smtp.starttls.required: true
+#    properties.mail.smtp.ssl.enable: true
+    default-encoding: utf-8
+    port: 994
+    spring.mail.properties.smtp.ssl.enable: true
+    spring.mail.properties.smtp.starttls.enable: true
+    spring.mail.properties.smtp.starttls.required: true
+
+
+sms:
+  aliyun:
+    accessKeyID: your_aliyun_access_key_id # accessKeyID
+    accessKeySecret: your_aliyun_access_key_secret # accessKeySecret
+    domain: dysmsapi.aliyuncs.com
+    regionId: cn-hangzhou
+    templateCode: your_sms_template_code # your template code
+    signName: your_sms_sign_name # your signature
+
+oss:
+  bucketName: your_oss_bucket
+  accessKeyId: your_oss_access_key_id
+  accessKeySecret: your_oss_access_key_secret
+  # OSS region
+  endpoint: oss-cn-hangzhou.aliyuncs.com
+  bucket: https://your-oss-bucket.oss-cn-beijing.aliyuncs.com
+  fileHost: https://your-oss-bucket.oss-cn-hangzhou.aliyuncs.com/

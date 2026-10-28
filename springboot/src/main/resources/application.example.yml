@@ -1,0 +1,59 @@
+server:
+  port: 9999
+  servlet:
+    encoding:
+      charset: utf-8
+      force: true
+spring:
+  application:
+    name: BreadRollMall-Server
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  profiles:
+    include: redis,mail,jdbc
+  servlet:
+    multipart:
+      max-file-size: 6MB
+      max-request-size: 7MB
+  jpa:
+    open-in-view: false
+
+sa-token:
+  token-name: satoken
+  # token有效期，单位s 默认30天, -1代表永不过期
+  timeout: 2592000
+  # token临时有效期 (指定时间内无操作就视为token过期) 单位: 秒
+  activity-timeout: -1
+  # 是否允许同一账号并发登录 (为true时允许一起登录,为false时新登录挤掉旧登录)
+  is-concurrent: false
+  # 在多人登录同一账号时，是否共用一个token (为true时所有登录共用一个token,为false时每次登录新建一个token)
+  is-share: false
+  # token风格
+  token-style: uuid
+  # 是否输出操作日志
+  is-log: false
+  is-print: false
+
+admin:
+  email: admin@qq.com
+  userName: 超级管理员
+  password: your_admin_password   # 后台管理员登录密码，本地请改为真实值
+
+# 支付宝配置（占位符，请替换为你的真实值）
+alipay:
+  app-id: your_alipay_app_id
+  private-key: your_alipay_private_key
+  alipay-public-key: your_alipay_public_key
+  server-url: https://openapi.alipay.com/gateway.do
+  charset: utf-8
+  sign-type: RSA2
+  notify-url: http://your_domain/alipay/notify
+  returUrl: http://localhost/8080/#/myOrder
+
+# 微信支付配置（占位符）
+wechat:
+  app-id: your_wechat_app_id
+  mch-id: your_wechat_mch_id
+  mch-key: your_wechat_mch_key
+  notify-url: http://your_domain/wechat/notify

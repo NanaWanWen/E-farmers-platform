@@ -1,0 +1,9 @@
+# 将项目截图放入本目录，并在 README.md 中按对应文件名引用
+# 建议命名：
+#   login.png        登录/注册页
+#   dashboard.png    运营数据看板
+#   product.png      商品管理
+#   order.png        订单列表
+#   purchase.png     采购/供应商
+#   return.png       退货处理
+#   vip.png          VIP/营销轮播
